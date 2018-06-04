@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sudo setsebool -P httpd_can_network_connect true
+
 sudo yum install python34
 
 sudo yum install pygpgme yum-utils wget
