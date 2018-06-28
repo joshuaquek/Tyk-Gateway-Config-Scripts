@@ -38,6 +38,8 @@ sudo /opt/tyk-gateway/install/setup.sh --listenport=8080 --redishost=localhost -
 
 sudo service tyk-gateway start
 
+sudo /opt/tyk-gateway/install/setup.sh --dashboard=1 --listenport=8080 --redishost=localhost --redisport=6379
+
 # CLEANUP
 sudo rm -rf epel-release-6-8.noarch.rpm
 sudo rm -rf remi-release-6.rpm

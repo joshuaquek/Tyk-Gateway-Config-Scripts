@@ -78,7 +78,10 @@ sudo service mongod start
 
 sudo service redis start
 
-sudo /opt/tyk-dashboard/install/setup.sh --listenport=3000 --redishost=localhost --redisport=6379 --mongo=mongodb://127.0.0.1/tyk_analytics --tyk_api_hostname=$EC2PUBLICIPADDRESS --tyk_node_hostname=http://localhost --tyk_node_port=8080--portal_root=/portal --domain="$EC2PUBLICIPADDRESS"
+# This assumes that your tyk-gateway and tyk-dashboard are on the same machine. 
+# If they are not,
+#  --tyk_api_hostname="your_TYK_gateway_URL_here" and --domain="your_TYK_dashboard_URL_here"
+sudo /opt/tyk-dashboard/install/setup.sh --listenport=3000 --redishost=localhost --redisport=6379 --mongo=mongodb://127.0.0.1/tyk_analytics --tyk_api_hostname=$EC2PUBLICIPADDRESS --tyk_node_hostname=http://localhost --tyk_node_port=8080 --portal_root=/portal --domain="$EC2PUBLICIPADDRESS"
 
 sudo service tyk-dashboard start
 
